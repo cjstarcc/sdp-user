@@ -11,7 +11,7 @@ message GetEntityInfoReq {
 message GetEntityInfoResp {
   string   code = 1;
   string   msg = 2;
-  repeated EntityInfoOutput entityInfoOutput = 3;
+  EntityInfoOutput entityInfoOutput = 3;
 }
 
 message EntityInfoInput {
