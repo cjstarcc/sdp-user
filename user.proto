@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option go_package="./user.proto";
+
+message GetEntityInfoReq {
+  repeated EntityInfoInput entityInfoInput = 1;
+}
+
+
+message GetEntityInfoResp {
+  string   code = 1;
+  string   msg = 2;
+  repeated EntityInfoOutput entityInfoOutput = 3;
+}
+
+message EntityInfoInput {
+  repeated string dirId= 1;
+  repeated string departmentId= 2;
+  repeated string userId= 3;
+  repeated string roleId= 4;
+}
+
+message EntityInfoOutput{
+  repeated DirInfo dirInfo= 1;
+  repeated DepartmentInfo departmentInfo= 2;
+  repeated UserInfo UserInfo= 3;
+  repeated RoleInfo roleInfo= 4;
+}
+
+message DirInfo {
+  string id = 1;
+  string name = 2;
+}
+
+message DepartmentInfo {
+  string id = 1;
+  string name = 2;
+  string parentName = 3;
+}
+message UserInfo {
+  string id = 1;
+  string name = 2;
+  string parentName = 3;
+}
+message RoleInfo {
+  string id = 1;
+  string name = 2;
+}
+
+service User{
+  // 查询用户会话信息
+  rpc GetEntityInfo(GetEntityInfoReq) returns(GetEntityInfoResp);
+}
