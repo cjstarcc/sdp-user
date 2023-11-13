@@ -6,9 +6,9 @@ package server
 import (
 	"context"
 
-	"sdp-user/internal/logic"
-	"sdp-user/internal/svc"
-	"sdp-user/pb/user.proto"
+	"github.com/cjstarcc/sdp-user/internal/logic"
+	"github.com/cjstarcc/sdp-user/internal/svc"
+	"github.com/cjstarcc/sdp-user/pb/user.proto"
 )
 
 type UserServer struct {

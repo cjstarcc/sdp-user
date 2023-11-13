@@ -6,7 +6,7 @@ package user
 import (
 	"context"
 
-	"sdp-user/pb/user.proto"
+	"github.com/cjstarcc/sdp-user/pb/user.proto"
 
 	"github.com/zeromicro/go-zero/zrpc"
 	"google.golang.org/grpc"

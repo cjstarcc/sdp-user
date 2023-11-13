@@ -1,4 +1,4 @@
-module sdp-user
+module github.com/cjstarcc/sdp-user
 
 go 1.21.3
 

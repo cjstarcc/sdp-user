@@ -36,7 +36,7 @@ func NewUserClient(cc grpc.ClientConnInterface) UserClient {
 
 func (c *userClient) GetEntityInfo(ctx context.Context, in *GetEntityInfoReq, opts ...grpc.CallOption) (*GetEntityInfoResp, error) {
 	out := new(GetEntityInfoResp)
-	err := c.cc.Invoke(ctx, "/User/GetEntityInfo", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user.User/GetEntityInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -82,7 +82,7 @@ func _User_GetEntityInfo_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/User/GetEntityInfo",
+		FullMethod: "/user.User/GetEntityInfo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserServer).GetEntityInfo(ctx, req.(*GetEntityInfoReq))
@@ -94,7 +94,7 @@ func _User_GetEntityInfo_Handler(srv interface{}, ctx context.Context, dec func(
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var User_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "User",
+	ServiceName: "user.User",
 	HandlerType: (*UserServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
