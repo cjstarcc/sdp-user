@@ -4,7 +4,7 @@ package user;
 option go_package="./user.proto";
 
 message GetEntityInfoReq {
-  repeated EntityInfoInput entityInfoInput = 1;
+  EntityInfoInput entityInfoInput = 1;
 }
 
 
